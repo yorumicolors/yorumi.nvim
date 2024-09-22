@@ -35,7 +35,7 @@ function M.setup(config)
     MsgSeparator  = { bg = vim.o.cmdheight == 0 and palette.yoru0 or palette.yoru2 },
     MoreMsg       = { fg = palette.sangoBlue },
     NonText       = { fg = palette.yoru3 },
-    Normal        = { bg = palette.yoru0, fg = palette.tsuki3 },
+    Normal        = { bg = palette.yoru0, fg = palette.tsuki2 },
     NormalFloat   = { bg = palette.kuroiViolet, fg = palette.tsuki3 },
     FloatBorder   = { bg = palette.yoru0, fg = palette.tsuki1 },
     FloatTitle    = { fg = palette.tsuki2 },

@@ -5,7 +5,7 @@ function M.setup(config)
   local palette = require("yorumi.colors")
   return {
     -- @variable                       various variable names
-    ["@variable"] = { fg = palette.tsuki3 },
+    ["@variable"] = { fg = palette.tsuki2 },
     -- @variable.builtin (Special)     built-in variable names (e.g. `this`, `self`)
     ["@variable.builtin"] = { fg = palette.sangoRed},
     -- @variable.parameter             parameters of a function
