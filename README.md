@@ -1,9 +1,9 @@
 <h1 align="center" valign="middle" >
-  <img height="40px" src="https://github.com/yorumicolors/yorumi/blob/main/res/ezgif.com-crop.gif?raw=true">
+  <img height="40px" src="https://github.com/yorumicolors/.github/blob/main/res/seal_sots.gif?raw=true">
   <sup>yorumi.nvim - deep code, quiet sea</sup> 
 </h1>
 
-<img src="https://github.com/yorumicolors/yorumi/blob/main/res/term.png?raw=true">
+<img src="https://github.com/yorumicolors/.github/blob/main/res/apps/nvim/nvim-abyss.png?raw=true">
 
 Yorumi – a calming deep sea colorscheme for developers. 
 This color scheme is crafted to keep things mellow with low contrast vibes between components, 
