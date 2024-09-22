@@ -77,7 +77,7 @@ function M.setup(config)
     GitSignsDeletePreview = { fg = palette.kairoRed },
 
     -- Used for current line blame.
-    GitSignsCurrentLineBlame = { fg = vim.o.cursorline and palette.tsuki2 or palette.tsuki0 },
+    GitSignsCurrentLineBlame = { fg = vim.wo.cursorline and palette.tsuki1 or palette.tsuki0 },
 
     -- Used for added word diff regions in inline previews.
     GitSignsAddInline = { fg = palette.umiGreen },
