@@ -6,7 +6,7 @@ function M.apply(config)
   local hl_files = {
     "editor", "lsp", "syntax",
     "plugins/nvim-tree", "plugins/nvim-tree",
-    "plugins/indent-blankline"
+    "plugins/indent-blankline", "plugins/code-minimap"
   }
 
   for _, highlight in ipairs(hl_files) do
