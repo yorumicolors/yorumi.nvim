@@ -19,7 +19,7 @@ M.config = {
 function M.load(theme)
   local config = M.config
   theme = theme or M.config.background[vim.o.background] or M.config.theme
-  M._CURRENT_THEME = theme,
+  M._CURRENT_THEME = theme
 
   if vim.g.colors_name then
     vim.cmd("hi clear")
