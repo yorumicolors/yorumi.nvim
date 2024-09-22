@@ -1,11 +1,11 @@
 <h1 align="center" valign="middle" >
   <img height="40px" src="https://github.com/yorumicolors/yorumi/blob/main/res/ezgif.com-crop.gif?raw=true">
-  <sup>yorumi.nvim - a calming deep sea colorscheme for developers</sup> 
+  <sup>yorumi.nvim - deep code, quiet sea</sup> 
 </h1>
 
 <img src="https://github.com/yorumicolors/yorumi/blob/main/res/term.png?raw=true">
 
-Yorumi – deep code, quiet seas. 
+Yorumi – a calming deep sea colorscheme for developers. 
 This color scheme is crafted to keep things mellow with low contrast vibes between components, 
 while your text stays razor-sharp and easy on the eyes (~8:1 contrast ratio). 
 Perfect for those late-night marathon coding sessions or when you just want to feel like you're in a cozy nook. 
