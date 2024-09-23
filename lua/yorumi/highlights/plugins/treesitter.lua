@@ -9,7 +9,7 @@ function M.setup(config)
     -- @variable.builtin (Special)     built-in variable names (e.g. `this`, `self`)
     ["@variable.builtin"] = { fg = palette.sangoRed},
     -- @variable.parameter             parameters of a function
-    ["@variable.parameter"] = { fg = palette.tsuki1 },
+    ["@variable.parameter"] = { fg = palette.tsuki2 },
     -- @variable.parameter.builtin     special parameters (e.g. `_`, `it`)
     -- @variable.member                object and struct fields
     ["@variable.member"] = { fg = palette.sangoYellow },

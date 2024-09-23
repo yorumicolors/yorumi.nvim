@@ -37,7 +37,7 @@ function M.setup(config)
     NonText       = { fg = palette.kuroiGray },
     Normal        = { bg = palette.yoru0, fg = palette.tsuki3 },
     NormalFloat   = { bg = palette.kuroiViolet, fg = palette.tsuki3 },
-    FloatBorder   = { bg = palette.kuroiViolet, fg = palette.tsuki1 },
+    FloatBorder   = { bg = palette.kuroiViolet, fg = palette.tsuki2 },
     FloatTitle    = { fg = palette.tsuki2 },
     FloatFooter   = { fg = palette.tsuki2 },
     NormalNC      = config.dimInactive and { bg = palette.yoru2, fg = palette.tsuki2 } or { link = "Normal" },
