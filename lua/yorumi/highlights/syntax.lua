@@ -7,7 +7,7 @@ function M.setup(config)
 
   return {
     -- *Comment	any comment
-    Comment = { fg = palette.kuroiGray },
+    Comment = { fg = palette.tsuki1 },
 
     -- *Constant	any constant
     Constant = { fg = palette.sangoOrange },

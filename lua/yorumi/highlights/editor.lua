@@ -66,7 +66,7 @@ function M.setup(config)
     Visual        = { bg = palette.kuroiGray, fg = palette.tsuki3 },
     VisualNOS     = { link = "Visual" },
     WarningMsg    = { fg = palette.sangoYellow },
-    Whitespace    = { bg = palette.yoru2 },
+    Whitespace    = { fg = palette.yoru3 },
     WildMenu      = { link = "Pmenu" },
     WinBar        = { fg = palette.tsuki2, bg = "NONE" },
     WinBarNC      = { fg = palette.yoru3, bg = config.dimInactive and palette.yoru2 or "NONE" },
