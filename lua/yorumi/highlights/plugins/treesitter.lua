@@ -68,9 +68,9 @@ function M.setup(config)
     -- @keyword.coroutine      keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
     -- @keyword.function       keywords that define a function (e.g. `func` in Go, `def` in Python)
     -- @keyword.operator       operators that are English words (e.g. `and`, `or`)
-    ["@keyword.operator"] = { fg = palette.sangoRed, bold = true },
+    ["@keyword.operator"] = { fg = palette.sangoYellow, bold = true },
     -- @keyword.import         keywords for including modules (e.g. `import`, `from` in Python)
-    ["@keyword.import"] = { link = "PreProc" },
+    ["@keyword.import"] = { fg = palette.sangoViolet },
     -- @keyword.type           keywords defining composite types (e.g. `struct`, `enum`)
     -- @keyword.modifier       keywords defining type modifiers (e.g. `const`, `static`, `public`)
     -- @keyword.repeat         keywords related to loops (e.g. `for`, `while`)

@@ -40,10 +40,10 @@ function M.setup(config)
     Exception = { fg = palette.sangoRed },
 
     -- *PreProc	generic Preprocessor
-    PreProc = { fg = palette.sangoRed },
+    PreProc = { fg = palette.sangoViolet },
     --  Include	preprocessor #include
-    --  Define		preprocessor #define
-    --  Macro		same as Define
+    Define = { fg = palette.sangoRed },
+    Macro = { fg = palette.kairoBlue },
     --  PreCondit	preprocessor #if, #else, #endif, etc.
 
     -- *Type		int, long, char, etc.
