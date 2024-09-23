@@ -8,8 +8,8 @@ local palette = {
   yoru3   = "#1D202B",
 
   -- tsuki
-  tsuki0  = "#797B87",
-  tsuki1  = "#90929E",
+  tsuki0  = "#656771",
+  tsuki1  = "#878996",
   tsuki2  = "#A7A9B5",
   tsuki3  = "#BDBFCB",
   tsuki4  = "#C6DFEC",
