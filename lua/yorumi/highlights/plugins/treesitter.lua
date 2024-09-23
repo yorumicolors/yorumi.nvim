@@ -12,7 +12,7 @@ function M.setup(config)
     ["@variable.parameter"] = { fg = palette.tsuki1 },
     -- @variable.parameter.builtin     special parameters (e.g. `_`, `it`)
     -- @variable.member                object and struct fields
-    ["@variable.member"] = { fg = palette.sangoRed },
+    ["@variable.member"] = { fg = palette.sangoYellow },
     --
     -- @constant (Constant)              constant identifiers
     -- @constant.builtin       built-in constant values
@@ -104,7 +104,7 @@ function M.setup(config)
     ["@comment.warning"] = { fg = palette.tsuki3, bg = palette.kuroiYellow, bold = true },
     -- @comment.todo           todo-type comments (e.g. `TODO`, `WIP`)
     -- @comment.note           note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
-    ["@comment.note"] = { fg = palette.yoru0, bg = palette.kairoYellow, bold = true },
+    ["@comment.note"] = { bg = palette.yoru0, fg = palette.kairoYellow, bold = true },
     --
     -- @markup.strong          bold text
     ["@markup.strong"] = { bold = true },
