@@ -43,7 +43,7 @@ function M.setup(config)
     PreProc = { fg = palette.sangoViolet },
     --  Include	preprocessor #include
     Define = { fg = palette.sangoRed },
-    Macro = { fg = palette.kairoBlue },
+    Macro = { fg = palette.sangoRed },
     --  PreCondit	preprocessor #if, #else, #endif, etc.
 
     -- *Type		int, long, char, etc.
