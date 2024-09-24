@@ -153,7 +153,7 @@ function M.setup(config)
     -- @tag                    XML-style tag names (e.g. in XML, HTML, etc.)
     -- @tag.builtin            XML-style tag names (e.g. HTML5 tags)
     -- @tag.attribute          XML-style tag attributes
-    ["@tag.attribute"] = { fg = palette.kuroiYellow },
+    ["@tag.attribute"] = { fg = palette.sangoOrange },
     -- @tag.delimiter          XML-style tag delimiters
     ["@tag.delimiter"] = { fg = palette.tsuki1 },
   }

@@ -73,7 +73,7 @@ function M.setup(config)
     Error = { fg = palette.sangoRed },
 
     -- *Todo		anything that needs extra attention; mostly the keywords TODO FIXME WARNING and XXX
-    Todo = { fg = palette.yoru0, bg = palette.kuroiYellow, bold = true },
+    Todo = { fg = palette.kairoYellow, bg = palette.kuroiYellow, bold = true },
 
     qfLineNr = { link = "LineNr" },
     qfFileName = { link = "Directory" },
