@@ -17,7 +17,7 @@ function M.setup(config)
     DiffAdd       = { bg = palette.kuroiGreen, fg = palette.kairoGreen },
     DiffChange    = { bg = palette.kuroiYellow, fg = palette.kairoYellow },
     DiffDelete    = { bg = palette.kuroiRed, fg = palette.kairoRed },
-    DiffText      = { bg = palette.tsuki3 },
+    DiffText      = { bg = palette.kuroiGray, fg = palette.tsuki3 },
     EndOfBuffer   = { fg = palette.yoru2 },
     ErrorMsg      = { fg = palette.kairoRed },
     WinSeparator  = { fg = palette.yoru3 },
@@ -74,9 +74,9 @@ function M.setup(config)
     debugPC       = { bg = palette.umiRed },
     -- debugBreakpoint = 
 
-    LspReferenceText  = { bg = palette.tsuki2 },
+    LspReferenceText  = { fg = palette.tsuki2 },
     LspReferenceRead  = { link = "LspReferenceText" },
-    LspReferenceWrite = { bg = palette.tsuki2, underline = true },
+    LspReferenceWrite = { fg = palette.tsuki2, underline = true },
 
     DiagnosticError = { fg = palette.sangoRed },
     DiagnosticWarn  = { fg = palette.sangoYellow },

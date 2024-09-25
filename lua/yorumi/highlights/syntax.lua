@@ -62,7 +62,7 @@ function M.setup(config)
     --  Debug		debugging statements
 
     -- *Underlined	text that stands out, HTML links
-    Underlined = { fg = palette.umiCyan, underline = true },
+    Underlined = { fg = palette.kairoBlue, underline = true },
     Bold = { bold = true },
     Italic = { italic = true },
 
