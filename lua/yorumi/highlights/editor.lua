@@ -17,7 +17,7 @@ function M.setup(config)
     DiffAdd       = { bg = palette.kuroiGreen, fg = palette.kairoGreen },
     DiffChange    = { bg = palette.kuroiYellow, fg = palette.kairoYellow },
     DiffDelete    = { bg = palette.kuroiRed, fg = palette.kairoRed },
-    DiffText      = { bg = palette.kuroiGray, fg = palette.tsuki3 },
+    DiffText      = { bg = palette.kairoYellow, fg = palette.yoru0 },
     EndOfBuffer   = { fg = palette.yoru2 },
     ErrorMsg      = { fg = palette.kairoRed },
     WinSeparator  = { fg = palette.yoru3 },
@@ -109,7 +109,7 @@ function M.setup(config)
     LspSignatureActiveParameter = { fg = palette.sangoYellow },
     LspCodeLens = { fg = palette.tsuki0 },
 
-    difAdded    = { fg = palette.kairoGreen },
+    diffAdded   = { fg = palette.kairoGreen },
     diffRemoved = { fg = palette.kairoRed },
     diffDeleted = { fg = palette.umiRed },
     diffChanged = { fg = palette.sangoYellow },
