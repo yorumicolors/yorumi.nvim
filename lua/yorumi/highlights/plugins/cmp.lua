@@ -1,12 +1,17 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
-
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
-    CmpDocumentation = { bg = palette.yoru0, fg = palette.tsuki2 },
-    CmpDocumentationBorder = { bg = palette.yoru0, fg = palette.tsuki3 },
+    CmpDocumentation = { bg = theme.ui.pmenu.bg, fg = theme.ui.pmenu.fg },
+    CmpDocumentationBorder = { bg = theme.ui.pmenu.bg, fg = theme.ui.float.fg_border },
+
+    -- refer https://github.com/hrsh7th/nvim-cmp/discussions/1200
+    -- add Normal:CmpNormal to winhighlight
+    CmpNormal = { bg = theme.ui.pmenu.bg },
+    CmpFloatBorder = { bg = theme.ui.pmenu.bg, fg = theme.ui.float.fg_border },
+    CmpCursorLine = { link = "PmenuSel" },
 
     CmpItemKindMethod = { link = "@function.method" },
     CmpItemKindFunction = { link = "Function" },

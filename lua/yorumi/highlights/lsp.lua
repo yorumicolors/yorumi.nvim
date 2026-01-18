@@ -1,8 +1,8 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
     -- ["@lsp.type.class"] = { link = "Structure" },
     -- ["@lsp.type.decorator"] = { link = "Function" },
@@ -49,7 +49,7 @@ function M.setup(config)
     ["@lsp.typemod.string.injected"] = { link = "String" },
     ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
-    ["@lsp.typemod.function.readonly"] = { fg = palette.sangoBlue, bold = true }
+    ["@lsp.typemod.function.readonly"] = { fg = theme.syn.fun, bold = true }
   }
 end
 

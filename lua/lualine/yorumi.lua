@@ -2,7 +2,7 @@
 
 local arrow_sl = require('arrow.statusline')
 local lualine = require('lualine')
-local palette = require("yorumi.colors")
+local theme = require("yorumi.colors")("abyss")
 
 local checks = {
   empty_buffer = function()
@@ -28,8 +28,8 @@ local cfg = {
     section_separators = '',
 
     theme = {
-      normal = { c = { fg = palette.tsuki3, bg = palette.yoru1 }},
-      inactive = { c = { fg = palette.tsuki1, bg = palette.yoru0 }},
+      normal = { c = { fg = theme.ui.fg, bg = theme.ui.bg_p2 }},
+      inactive = { c = { fg = theme.ui.fg_dim, bg = theme.ui.bg }},
     },
   },
 
@@ -83,7 +83,7 @@ insert_left {
   function()
     return '▉'
   end,
-  color = { fg = palette.tsuki4 }, -- Sets highlighting of component
+  color = { fg = theme.ui.fg_dim }, -- Sets highlighting of component
   padding = { left = 0, right = 0 }, -- We don't need space before this
 }
 
@@ -94,12 +94,12 @@ insert_left {
   end,
   color = function()
     local mode_color = {
-      n = palette.tsuki2,
-      i = palette.sangoGreen,
-      v = palette.sangoYellow,
-      [' '] = palette.sangoBlue,
-      V = palette.kairoYellow,
-      c = palette.sangoCyan,
+      n = theme.ui.fg_dim,
+      i = theme.syn.string,
+      v = theme.syn.identifier,
+      [' '] = theme.syn.fun,
+      V = theme.vcs.changed,
+      c = theme.syn.type,
     }
     return { fg = mode_color[vim.fn.mode()] }
   end
@@ -111,13 +111,13 @@ insert_left {
     return arrow_sl.text_for_statusline_with_icons()
   end,
   cond = arrow_sl.is_on_arrow_file(),
-  color = { fg = palette.tsuki3 }
+  color = { fg = theme.ui.fg }
 }
 
 insert_left {
   'filename',
   cond = checks.empty_buffer,
-  color = { fg = palette.sangoCyan, gui = 'bold'}
+  color = { fg = theme.syn.type, gui = 'bold'}
 }
 
 insert_left {
@@ -131,7 +131,7 @@ insert_left {
 
 insert_left {
   'progress',
-  color = { fg = palette.sangoBlue, gui = 'bold' }
+  color = { fg = theme.syn.fun, gui = 'bold' }
 }
 
 insert_left {
@@ -139,16 +139,16 @@ insert_left {
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
   diagnostics_color = {
-    color_error = { fg = palette.sangoRed },
-    color_warn  = { fg = palette.sangoYellow },
-    color_info  = { fg = palette.sangoCyan },
+    color_error = { fg = theme.diag.error },
+    color_warn  = { fg = theme.syn.identifier },
+    color_info  = { fg = theme.syn.type },
   },
 }
 
 insert_right {
   'branch',
   icon = '',
-  color = { fg = palette.sangoViolet, gui = 'bold' },
+  color = { fg = theme.ui.special, gui = 'bold' },
 }
 
 insert_right {
@@ -156,15 +156,15 @@ insert_right {
   -- Is it me or the symbol for modified us really weird
   symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
   diff_color = {
-    added     = { fg = palette.kairoGreen },
-    modified  = { fg = palette.kairoYellow },
-    removed   = { fg = palette.kairoRed },
+    added     = { fg = theme.vcs.added },
+    modified  = { fg = theme.vcs.changed },
+    removed   = { fg = theme.diag.error },
   },
 }
 
 insert_right {
   'filetype',
-  color = { bg = palette.kuroiBlue }
+  color = { bg = theme.diag.info }
 }
 
 insert_right {
@@ -184,7 +184,7 @@ insert_right {
     return msg
   end,
   icon = ' ',
-  color = { fg = palette.tsuki4, bg = palette.yoru3, gui = 'bold' },
+  color = { fg = theme.ui.fg_dim, bg = theme.ui.bg_p1, gui = 'bold' },
 }
 
 lualine.setup(cfg)

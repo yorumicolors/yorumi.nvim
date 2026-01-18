@@ -1,12 +1,11 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
-
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
-    BlinkCmpDoc = { bg = palette.yoru0, fg = palette.tsuki2 },
-    BlinkCmpDocBorder = { bg = palette.yoru0, fg = palette.tsuki3 },
+    BlinkCmpDoc = { bg = theme.ui.bg, fg = theme.ui.fg_dim },
+    BlinkCmpDocBorder = { bg = theme.ui.bg, fg = theme.ui.fg },
 
     BlinkCmpKindMethod = { link = "@function.method" },
     BlinkCmpKindFunction = { link = "Function" },

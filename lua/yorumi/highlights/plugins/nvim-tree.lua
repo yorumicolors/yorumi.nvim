@@ -1,9 +1,8 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
-
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
     -- NvimTreeNormal       = { link = "Normal" },
     -- NvimTreeNormalFloat  = { link = "NormalFloat" },
@@ -16,17 +15,17 @@ function M.setup(config)
     -- NvimTreeCursorColumn = { link = "CursorColumn" },
     -- NvimTreeCursorLine   = { link = "CursorLine" },
     -- NvimTreeCursorLineNr = { link = "CursorLineNr" },
-    NvimTreeStatusLine   = { bg = palette.yoru0 },
+    NvimTreeStatusLine   = { bg = theme.ui.bg },
     -- NvimTreeStatusLineNC = { link = "StatusLineNC" },
     -- NvimTreeExecFile     = { link = "SpellCap" },
     -- NvimTreeImageFile    = { link = "SpellCap" },
-    NvimTreeSpecialFile  = { fg = palette.kairoViolet },
+    NvimTreeSpecialFile  = { bg = theme.ui.bg_special, fg = theme.ui.fg_special },
     -- NvimTreeSymlink      = { link = "SpellCap" },
     -- NvimTreeFileIcon     = { link = "NvimTreeNormal" },
     -- NvimTreeSymlink      = { link = "NvimTreeNormal" },
-    NvimTreeRootFolder  = { fg = palette.kairoBlue, bg = palette.yoru3 },
-    NvimTreeFolderName  = { fg = palette.kairoBlue },
-    -- NvimTreeOpenedFolderName   = { fg = palette.kairoBlue },
+    NvimTreeRootFolder  = { fg = theme.diag.info, bg = theme.ui.bg_gutter },
+    NvimTreeFolderName  = { fg = theme.diag.info },
+    -- NvimTreeOpenedFolderName   = { fg = theme.diag.info },
     -- NvimTreeClosedFolderIcon   = { link = "NvimTreeFolderIcon" },
     -- NvimTreeFolderArrowClosed  = { link = "NvimTreeIndentMarker" },
     -- NvimTreeFolderArrowOpen    = { link = "NvimTreeIndentMarker" },
@@ -50,11 +49,11 @@ function M.setup(config)
 
     -- NvimTreeOpenedHL = { link = "Special" },
 
-    NvimTreeGitDeletedIcon = { fg = palette.kuroiRed },
+    NvimTreeGitDeletedIcon = { fg = theme.diff.delete },
     -- NvimTreeGitDirtyIcon = { link = "Statement" },
     -- NvimTreeGitIgnoredIcon = { link = "Comment" },
     -- NvimTreeGitMergeIcon = { link = "Constant" },
-    NvimTreeGitNewIcon  = { fg = palette.umiGreen },
+    NvimTreeGitNewIcon  = { fg = theme.vcs.added },
     -- NvimTreeGitRenamedIcon = { link = "PreProc" },
     -- NvimTreeGitStagedIcon = { link = "Constant" },
 
@@ -68,7 +67,7 @@ function M.setup(config)
 
     -- NvimTreeGitFolderDeletedHL = { link = "NvimTreeGitFileDeletedHL" },
     -- NvimTreeGitFolderDirtyHL = { link = "NvimTreeGitFileDirtyHL" },
-    -- NvimTreeGitFolderIgnoredHL = { link = "NvimTreeGitFileIgnoredHL" },
+    -- NvimTreeGitFolderIgnoredHL = { link = "NvimTreeGitFileIgnoredIcon" },
     -- NvimTreeGitFolderMergeHL = { link = "NvimTreeGitFileMergeHL" },
     -- NvimTreeGitFolderNewHL = { link = "NvimTreeGitFileNewHL" },
     -- NvimTreeGitFolderRenamedHL = { link = "NvimTreeGitFileRenamedHL" },

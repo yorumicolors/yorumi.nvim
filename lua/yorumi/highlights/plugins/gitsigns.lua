@@ -1,110 +1,110 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
     -- Used for the text of 'add' signs.
-    GitSignsAdd = { fg = palette.umiGreen },
+    GitSignsAdd = { fg = theme.vcs.added },
 
     -- Used for the text of 'change' signs.
-    GitSignsChange = { fg = palette.kairoYellow },
+    GitSignsChange = { fg = theme.vcs.changed },
 
     -- Used for the text of 'delete' signs.
-    GitSignsDelete = { fg = palette.kairoRed },
+    GitSignsDelete = { fg = theme.diag.error },
 
     -- Used for the text of 'changedelete' signs.
-    GitSignsChangedelete = { fg = palette.sangoViolet },
+    GitSignsChangedelete = { fg = theme.syn.keyword },
 
     -- Used for the text of 'topdelete' signs.
-    GitSignsTopdelete = { fg = palette.kairoRed },
+    GitSignsTopdelete = { fg = theme.diag.error },
 
     -- Used for the text of 'untracked' signs.
-    GitSignsUntracked = { fg = palette.umiCyan },
+    GitSignsUntracked = { fg = theme.diag.info },
 
     -- Used for number column (when `config.numhl == true`) of 'add' signs.
-    GitSignsAddNr = { fg = palette.kairoGreen },
+    GitSignsAddNr = { fg = theme.vcs.added },
 
     -- Used for number column (when `config.numhl == true`) of 'change' signs.
-    GitSignsChangeNr = { fg = palette.kairoYellow },
+    GitSignsChangeNr = { fg = theme.vcs.changed },
 
     -- Used for number column (when `config.numhl == true`) of 'delete' signs.
-    GitSignsDeleteNr = { fg = palette.kairoRed },
+    GitSignsDeleteNr = { fg = theme.diag.error },
 
     -- Used for number column (when `config.numhl == true`) of 'changedelete' signs.
-    GitSignsChangedeleteNr = { fg = palette.sangoViolet },
+    GitSignsChangedeleteNr = { fg = theme.syn.keyword },
 
     -- Used for number column (when `config.numhl == true`) of 'topdelete' signs.
-    GitSignsTopdeleteNr = { fg = palette.kairoRed },
+    GitSignsTopdeleteNr = { fg = theme.diag.error },
 
     -- Used for number column (when `config.numhl == true`) of 'untracked' signs.
-    GitSignsUntrackedNr = { fg = palette.umiCyan },
+    GitSignsUntrackedNr = { fg = theme.diag.info },
 
     -- Used for buffer line (when `config.linehl == true`) of 'add' signs.
-    GitSignsAddLn = { fg = palette.umiGreen },
+    GitSignsAddLn = { fg = theme.vcs.added },
 
     -- Used for buffer line (when `config.linehl == true`) of 'change' signs.
-    GitSignsChangeLn = { fg = palette.kairoYellow },
+    GitSignsChangeLn = { fg = theme.vcs.changed },
 
     -- Used for buffer line (when `config.linehl == true`) of 'changedelete' signs.
-    GitSignsChangedeleteLn = { fg = palette.sangoViolet },
+    GitSignsChangedeleteLn = { fg = theme.syn.keyword },
 
     -- Used for buffer line (when `config.linehl == true`) of 'untracked' signs.
-    GitSignsUntrackedLn = { fg = palette.umiCyan },
+    GitSignsUntrackedLn = { fg = theme.diag.info },
 
-    -- Used for the text of 'add' signs when the cursor is on the same line as the sign.
-    GitSignsAddCul = { fg = palette.umiGreen },
+    -- Used when the cursor is on the same line as the sign.
+    GitSignsAddCul = { fg = theme.vcs.added },
 
     -- Used for the text of 'change' signs when the cursor is on the same line as the sign.
-    GitSignsChangeCul = { fg = palette.kairoYellow },
+    GitSignsChangeCul = { fg = theme.vcs.changed },
 
     -- Used for the text of 'delete' signs when the cursor is on the same line as the sign.
-    GitSignsDeleteCul = { fg = palette.kairoRed },
+    GitSignsDeleteCul = { fg = theme.diag.error },
 
     -- Used for the text of 'changedelete' signs when the cursor is on the same line as the sign.
-    GitSignsChangedeleteCul = { fg = palette.sangoViolet },
+    GitSignsChangedeleteCul = { fg = theme.syn.keyword },
 
     -- Used for the text of 'topdelete' signs when the cursor is on the same line as the sign.
-    GitSignsTopdeleteCul = { fg = palette.kairoRed },
+    GitSignsTopdeleteCul = { fg = theme.diag.error },
 
     -- Used for the text of 'untracked' signs when the cursor is on the same line as the sign.
-    GitSignsUntrackedCul = { fg = palette.umiCyan },
+    GitSignsUntrackedCul = { fg = theme.diag.info },
 
     -- Used for added lines in previews.
-    GitSignsAddPreview = { fg = palette.umiGreen },
+    GitSignsAddPreview = { fg = theme.vcs.added },
 
     -- Used for deleted lines in previews.
-    GitSignsDeletePreview = { fg = palette.kairoRed },
+    GitSignsDeletePreview = { fg = theme.diag.error },
 
     -- Used for current line blame.
-    GitSignsCurrentLineBlame = { fg = vim.wo.cursorline and palette.tsuki1 or palette.tsuki0 },
+    GitSignsCurrentLineBlame = { fg = vim.wo.cursorline and theme.ui.fg_dim or theme.syn.comment },
 
     -- Used for added word diff regions in inline previews.
-    GitSignsAddInline = { fg = palette.umiGreen },
+    GitSignsAddInline = { fg = theme.vcs.added },
 
     -- Used for deleted word diff regions in inline previews.
-    GitSignsDeleteInline = { fg = palette.kairoRed },
+    GitSignsDeleteInline = { fg = theme.diag.error },
 
     -- Used for changed word diff regions in inline previews.
-    GitSignsChangeInline = { fg = palette.kairoYellow },
+    GitSignsChangeInline = { fg = theme.vcs.changed },
 
     -- Used for added word diff regions when `config.word_diff == true`.
-    GitSignsAddLnInline = { fg = palette.umiGreen },
+    GitSignsAddLnInline = { fg = theme.vcs.added },
 
     -- Used for changed word diff regions when `config.word_diff == true`.
-    GitSignsChangeLnInline = { fg = palette.kairoYellow },
+    GitSignsChangeLnInline = { fg = theme.vcs.changed },
 
     -- Used for deleted word diff regions when `config.word_diff == true`.
-    GitSignsDeleteLnInline = { fg = palette.kairoRed },
+    GitSignsDeleteLnInline = { fg = theme.diag.error },
 
     -- Used for deleted lines shown by inline `preview_hunk_inline()` or `show_deleted()`.
-    GitSignsDeleteVirtLn = { fg = palette.kairoRed },
+    GitSignsDeleteVirtLn = { fg = theme.diag.error },
 
     -- Used for word diff regions in lines shown by inline `preview_hunk_inline()` or `show_deleted()`.
-    GitSignsDeleteVirtLnInLine = { fg = palette.kairoRed },
+    GitSignsDeleteVirtLnInLine = { fg = theme.diag.error },
 
     -- Used for line numbers in inline hunks previews.
-    GitSignsVirtLnum = { fg = palette.kairoRed }
+    GitSignsVirtLnum = { fg = theme.diag.error }
   }
 end
 

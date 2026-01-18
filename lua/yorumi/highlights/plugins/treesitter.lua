@@ -1,18 +1,18 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
     -- @variable                       various variable names
-    ["@variable"] = { fg = palette.tsuki3 },
+    ["@variable"] = { fg = theme.ui.fg },
     -- @variable.builtin (Special)     built-in variable names (e.g. `this`, `self`)
-    ["@variable.builtin"] = { fg = palette.sangoRed},
+    ["@variable.builtin"] = { fg = theme.diag.error},
     -- @variable.parameter             parameters of a function
-    ["@variable.parameter"] = { fg = palette.tsuki2 },
+    ["@variable.parameter"] = { fg = theme.ui.fg_dim },
     -- @variable.parameter.builtin     special parameters (e.g. `_`, `it`)
     -- @variable.member                object and struct fields
-    ["@variable.member"] = { fg = palette.sangoYellow },
+    ["@variable.member"] = { fg = theme.syn.identifier },
     --
     -- @constant (Constant)              constant identifiers
     -- @constant.builtin       built-in constant values
@@ -25,15 +25,14 @@ function M.setup(config)
     -- @string                 string literals
     -- @string.documentation   string documenting code (e.g. Python docstrings)
     -- @string.regexp          regular expressions
-    ["@string.regexp"] = { fg = palette.sangoRed },
+    ["@string.regexp"] = { fg = theme.syn.regex },
     -- @string.escape          escape sequences
-    ["@string.escape"] = { fg = palette.sangoRed, bold = true },
+    ["@string.escape"] = { fg = theme.diag.error, bold = true },
     -- @string.special         other special strings (e.g. dates)
     -- @string.special.symbol  symbols or atoms
-    ["@string.special.symbol"] = { fg = palette.sangoYellow },
-    -- @string.special.path    filenames
+    ["@string.special.symbol"] = { fg = theme.syn.identifier },
     -- @string.special.url (Underlined)     URIs (e.g. hyperlinks)
-    ["@string.special.url"] = { fg = palette.sangoCyan, underline = true },
+    ["@string.special.url"] = { fg = theme.syn.type, underline = true },
     -- @character              character literals
     -- @character.special      special characters (e.g. wildcards)
     --
@@ -59,8 +58,8 @@ function M.setup(config)
     -- @function.method.call   method calls
     --
     -- @constructor            constructor calls and definitions
-    ["@constructor"] = { fg = palette.sangoBlue },
-    ["@constructor.lua"] = { fg = palette.kairoMagenta },
+    ["@constructor"] = { fg = theme.syn.fun },
+    ["@constructor.lua"] = { fg = theme.syn.statement },
     -- @operator               symbolic operators (e.g. `+`, `*`)
     ["@operator"] = { link = "Operator" },
     --
@@ -68,17 +67,17 @@ function M.setup(config)
     -- @keyword.coroutine      keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
     -- @keyword.function       keywords that define a function (e.g. `func` in Go, `def` in Python)
     -- @keyword.operator       operators that are English words (e.g. `and`, `or`)
-    ["@keyword.operator"] = { fg = palette.sangoYellow, bold = true },
+    ["@keyword.operator"] = { fg = theme.syn.identifier, bold = true },
     -- @keyword.import         keywords for including modules (e.g. `import`, `from` in Python)
-    ["@keyword.import"] = { fg = palette.sangoViolet },
+    ["@keyword.import"] = { fg = theme.syn.keyword },
     -- @keyword.type           keywords defining composite types (e.g. `struct`, `enum`)
     -- @keyword.modifier       keywords defining type modifiers (e.g. `const`, `static`, `public`)
     -- @keyword.repeat         keywords related to loops (e.g. `for`, `while`)
     -- @keyword.return         keywords like `return` and `yield`
-    ["@keyword.return"] = { fg = palette.sangoRed },
+    ["@keyword.return"] = { fg = theme.diag.error },
     -- @keyword.debug          keywords related to debugging
     -- @keyword.exception      keywords related to exceptions (e.g. `throw`, `catch`)
-    ["@keyword.exception"] = { fg = palette.kairoRed },
+    ["@keyword.exception"] = { fg = theme.diag.error },
 
     ["@keyword.luap"] = { link = "@string.regex" },
     --
@@ -89,22 +88,23 @@ function M.setup(config)
     -- @keyword.directive.define    preprocessor definition directives
     --
     -- @punctuation.delimiter  delimiters (e.g. `;`, `.`, `,`)
-    ["@punctuation.delimiter"] = { fg = palette.tsuki2 },
+    ["@punctuation.delimiter"] = { fg = theme.ui.fg_dim },
     -- @punctuation.bracket    brackets (e.g. `()`, `{}`, `[]`)
-    ["@punctuation.bracket"] = { fg = palette.tsuki2 },
+    ["@punctuation.bracket"] = { fg = theme.ui.fg_dim },
     -- @punctuation.special    special symbols (e.g. `{}` in string interpolation)
-    ["@punctuation.special"] = { fg = palette.sangoCyan },
+    ["@punctuation.special"] = { fg = theme.syn.type },
     --
     -- @comment                line and block comments
     -- @comment.documentation  comments documenting code
     --
     -- @comment.error          error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`)
-    ["@comment.error"] = { fg = palette.tsuki3, bg = palette.kuroiRed, bold = true },
+    ["@comment.error"] = { bg = theme.palette.red_30, fg = theme.palette.red_90, bold = true },
     -- @comment.warning        warning-type comments (e.g. `WARNING`, `FIX`, `HACK`)
-    ["@comment.warning"] = { fg = palette.tsuki3, bg = palette.kuroiYellow, bold = true },
+    ["@comment.warning"] = { bg = theme.diag.warning, fg = theme.ui.bg, bold = true },
     -- @comment.todo           todo-type comments (e.g. `TODO`, `WIP`)
+    ["@comment.todo"] = { bg = theme.palette.yellow_90, fg = theme.palette.dark_20, bold = true },
     -- @comment.note           note-type comments (e.g. `NOTE`, `INFO`, `XXX`)
-    ["@comment.note"] = { bg = palette.yoru0, fg = palette.kairoYellow, bold = true },
+    ["@comment.note"] = { bg = theme.palette.blue_30, fg = theme.palette.cyan_90, bold = true },
     --
     -- @markup.strong          bold text
     ["@markup.strong"] = { bold = true },
@@ -144,19 +144,19 @@ function M.setup(config)
     -- @markup.list.unchecked  unchecked todo-style list markers
     --
     -- @diff.plus              added text (for diff files)
-    ["@diff.plus"] = { fg = palette.sangoGreen },
+    ["@diff.plus"] = { fg = theme.vcs.added },
     -- @diff.minus             deleted text (for diff files)
-    ["@diff.minus"] = { fg = palette.sangoRed },
+    ["@diff.minus"] = { fg = theme.diag.error },
     -- @diff.delta             changed text (for diff files)
-    ["@diff.delta"] = { fg = palette.sangoYellow },
+    ["@diff.delta"] = { fg = theme.syn.identifier },
     --
     -- @tag                    XML-style tag names (e.g. in XML, HTML, etc.)
     -- @tag.builtin            XML-style tag names (e.g. HTML5 tags)
     -- @tag.attribute          XML-style tag attributes
-    ["@tag.attribute"] = { fg = palette.sangoOrange },
+    ["@tag.attribute"] = { fg = theme.syn.constant },
     -- @tag.delimiter          XML-style tag delimiters
-    ["@tag.delimiter"] = { fg = palette.tsuki1 },
+    ["@tag.delimiter"] = { fg = theme.ui.fg_dim },
   }
-  end
+end
 
-  return M
+return M

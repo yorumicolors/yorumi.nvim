@@ -1,9 +1,8 @@
 local M = {}
 
 ---@param config YorumiConfig
-function M.setup(config)
-  local palette = require("yorumi.colors")
-
+---@param theme YorumiTheme
+function M.setup(config, theme)
   return {
     -- ScrollbarHandle = {},
     -- ScrollbarCursorHandle = {},
@@ -20,7 +19,7 @@ function M.setup(config)
     -- ScrollbarHint = {},
     -- ScrollbarMiscHandle = {},
     -- ScrollbarMisc = {},
-    ScrollbarGitAdd = { bg = palette.kuroiGreen, fg = palette.kairoGreen },
+    ScrollbarGitAdd = { bg = theme.diff.add, fg = theme.vcs.added },
     -- ScrollbarGitAddHandle = {},
     -- ScrollbarGitChange = {},
     -- ScrollbarGitChangeHandle = {},

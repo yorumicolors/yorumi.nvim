@@ -1,0 +1,213 @@
+---@meta
+
+--- A color value, typically a hex string in the format "#rrggbb"
+---@alias Color string
+
+---@class ColorTable
+---@field dark_10			Color
+---@field dark_20			Color
+---@field dark_30			Color
+---@field dark_40			Color
+---@field dark_50			Color
+---@field dark_60			Color
+---@field dark_70			Color
+---@field dark_80			Color
+---@field dark_90			Color
+---@field dark_100		Color
+---@field light_10		Color
+---@field light_20		Color
+---@field light_30		Color
+---@field light_40		Color
+---@field light_50		Color
+---@field light_60		Color
+---@field light_70		Color
+---@field light_80		Color
+---@field light_90		Color
+---@field light_100		Color
+---@field red_10			Color
+---@field red_20			Color
+---@field red_30			Color
+---@field red_40			Color
+---@field red_50			Color
+---@field red_60			Color
+---@field red_70			Color
+---@field red_80			Color
+---@field red_90			Color
+---@field red_100			Color
+---@field green_10		Color
+---@field green_20		Color
+---@field green_30		Color
+---@field green_40		Color
+---@field green_50		Color
+---@field green_60		Color
+---@field green_70		Color
+---@field green_80		Color
+---@field green_90		Color
+---@field green_100		Color
+---@field blue_10			Color
+---@field blue_20			Color
+---@field blue_30			Color
+---@field blue_40			Color
+---@field blue_50			Color
+---@field blue_60			Color
+---@field blue_70			Color
+---@field blue_80			Color
+---@field blue_90			Color
+---@field blue_100		Color
+---@field yellow_10		Color
+---@field yellow_20		Color
+---@field yellow_30		Color
+---@field yellow_40		Color
+---@field yellow_50		Color
+---@field yellow_60		Color
+---@field yellow_70		Color
+---@field yellow_80		Color
+---@field yellow_90		Color
+---@field yellow_100	Color
+---@field magenta_10	Color
+---@field magenta_20	Color
+---@field magenta_30	Color
+---@field magenta_40	Color
+---@field magenta_50	Color
+---@field magenta_60	Color
+---@field magenta_70	Color
+---@field magenta_80	Color
+---@field magenta_90	Color
+---@field magenta_100	Color
+---@field cyan_10	    Color
+---@field cyan_20	    Color
+---@field cyan_30	    Color
+---@field cyan_40	    Color
+---@field cyan_50	    Color
+---@field cyan_60	    Color
+---@field cyan_70	    Color
+---@field cyan_80	    Color
+---@field cyan_90	    Color
+---@field cyan_100	  Color
+---@field purple_10	  Color
+---@field purple_20	  Color
+---@field purple_30	  Color
+---@field purple_40	  Color
+---@field purple_50	  Color
+---@field purple_60	  Color
+---@field purple_70	  Color
+---@field purple_80	  Color
+---@field purple_90	  Color
+---@field purple_100	Color
+---@field orange_10	  Color
+---@field orange_20	  Color
+---@field orange_30	  Color
+---@field orange_40	  Color
+---@field orange_50	  Color
+---@field orange_60	  Color
+---@field orange_70	  Color
+---@field orange_80	  Color
+---@field orange_90	  Color
+---@field orange_100	Color
+
+--- The 16 standard ANSI/terminal colors as an array
+--- These correspond to Neovim's `:highlight Terminal` / `termguicolors` fallback and
+--- common terminal emulators' color palette (0–15 indices).
+---@alias ANSI16Colors Color[]
+
+--- UI / editor interface colors
+---@class UIColors
+---@field fg             Color           Primary foreground text
+---@field fg_dim         Color           Dimmed / secondary text
+---@field fg_reverse     Color           Foreground on colored backgrounds
+---@field bg             Color           Main editor background
+---@field bg_dim         Color           Dimmed background variant
+---@field bg_gutter      Color           Gutter / sign column background
+---@field fg_gutter      Color           Foreground in gutter/sign column
+---@field bg_m1          Color           Menu/popup base level
+---@field bg_m2          Color           Menu/popup selected level
+---@field bg_m3          Color           Menu/popup strong accent level
+---@field bg_p1          Color           Panel / statusline brighter variant
+---@field bg_p2          Color           Panel variant 2
+---@field nontext        Color           Non-printable / end-of-buffer
+---@field whitespace     Color           Visible whitespace
+---@field special        Color           UI accents (titles, borders)
+---@field fg_special     Color           Special UI accents foreground
+---@field bg_special     Color           Special UI accents background
+---@field bg_search      Color           Search highlight background
+---@field fg_search      Color           Search highlight foreground
+---@field bg_CurSearch   Color           Current search highlight background
+---@field fg_CurSearch   Color           Current search highlight foreground
+---@field bg_visual      Color           Visual selection background
+---@field fg_visual      Color           Visual selection foreground
+---@field bg_cursor      Color?          Cursor line/column (optional)
+---@field border         Color?          Float/popup border (optional)
+---@field pmenu          PopupColors     Popup menu colors
+---@field float          FloatColors     Floating window colors
+
+--- Popup menu colors
+---@class PopupColors
+---@field bg        Color
+---@field fg        Color
+---@field bg_sel    Color
+---@field fg_sel    Color
+---@field bg_sbar   Color
+---@field bg_thumb  Color
+
+--- Floating window colors
+---@class FloatColors
+---@field bg         Color
+---@field fg         Color
+---@field fg_border  Color?
+
+--- Syntax / semantic highlighting
+---@class SyntaxColors
+---@field string      Color
+---@field character   Color?
+---@field number      Color
+---@field boolean     Color?
+---@field constant    Color
+---@field identifier  Color
+---@field variable    Color?
+---@field parameter   Color?
+---@field fun         Color
+---@field keyword     Color
+---@field statement   Color
+---@field operator    Color
+---@field preproc     Color
+---@field type        Color
+---@field regex       Color?
+---@field punct       Color
+---@field comment     Color
+---@field special1    Color?
+---@field special2    Color?
+---@field special3    Color?
+---@field deprecated  Color?
+
+--- Diagnostics
+---@class DiagnosticColors
+---@field error      Color
+---@field error_bg   Color           Error background color for floating errors
+---@field warning    Color
+---@field info       Color
+---@field hint       Color
+---@field ok         Color?
+
+--- Diff highlighting
+---@class DiffColors
+---@field add     Color
+---@field delete  Color
+---@field change  Color
+---@field text    Color?
+
+--- Git / VCS signs
+---@class VCSColors
+---@field added    Color
+---@field removed  Color
+---@field changed  Color
+
+---@class YorumiTheme
+---@field palette    ColorTable       Raw color palette reference
+---@field overrides  table<string, table>  Theme-specific highlight overrides
+---@field ui         UIColors
+---@field syn        SyntaxColors
+---@field diag       DiagnosticColors
+---@field diff       DiffColors
+---@field vcs        VCSColors
+---@field term       ANSI16Colors
+

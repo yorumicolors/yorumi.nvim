@@ -4,6 +4,7 @@ local M = {}
 M.config = {
   undercurl = true,
   commentStyle = { italic = false },
+  highlightOverrides = {},
   functionStyle = {},
   keywordStyle = {},
   statementStyle = {},
@@ -28,7 +29,8 @@ function M.load(theme)
   vim.g.colors_name = "yorumi"
   vim.o.termguicolors = true
 
-  require("yorumi.highlights").apply(config)
+  local loaded_theme = require("yorumi.colors")(theme)
+  require("yorumi.highlights").apply(config, loaded_theme)
 end
 
 return M
